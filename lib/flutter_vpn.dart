@@ -86,8 +86,8 @@ class FlutterVpn {
   /// Use given credentials to connect VPN (ikev2-eap).
   /// This will create a background VPN service.
   static Future<Null> simpleConnect(
-      String address, String username, String password) async {
+      String address, String username, String password,int mtu) async {
     await _channel.invokeMethod('connect',
-        {'address': address, 'username': username, 'password': password});
+        {'address': address, 'username': username, 'password': password, 'mtu': mtu });
   }
 }
