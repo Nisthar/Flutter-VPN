@@ -32,9 +32,13 @@ class _MyAppState extends State<MyApp> {
 
   @override
   void initState() {
+    var future = Future.delayed(Duration(seconds: 5), getPerm);
+    super.initState();
+  }
+
+  getPerm() async {
     FlutterVpn.prepare();
     FlutterVpn.onStateChanged.listen((s) => setState(() => state = s));
-    super.initState();
   }
 
   @override
@@ -65,11 +69,11 @@ class _MyAppState extends State<MyApp> {
             RaisedButton(
               child: Text('Connect'),
               onPressed: () => FlutterVpn.simpleConnect(
-                _addressController.text,
-                _usernameController.text,
-                _passwordController.text,
-                "1238"
-              ),
+                  _addressController.text,
+                  _usernameController.text,
+                  _passwordController.text,
+                  "1300",
+                  "10"),
             ),
             RaisedButton(
               child: Text('Disconnect'),

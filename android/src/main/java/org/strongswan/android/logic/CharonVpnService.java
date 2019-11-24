@@ -148,6 +148,7 @@ public class CharonVpnService extends VpnService implements Runnable, VpnStateSe
                     profile.setUsername(bundle.getString("UserName"));
                     profile.setPassword(bundle.getString("Password"));
                     profile.setMTU(Integer.parseInt(bundle.getString("mtu")));
+                    profile.setNATKeepAlive(Integer.parseInt(bundle.getString("keepalive")));
                     profile.setVpnType(VpnType.fromIdentifier(bundle.getString("VpnType")));
                     profile.setSelectedAppsHandling(0);
                     profile.setFlags(0);

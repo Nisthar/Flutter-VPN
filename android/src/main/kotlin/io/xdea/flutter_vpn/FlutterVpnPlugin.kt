@@ -103,6 +103,7 @@ class FlutterVpnPlugin(private val registrar: Registrar) : MethodCallHandler {
                 profileInfo.putString("UserName", map["username"])
                 profileInfo.putString("Password", map["password"])
                 profileInfo.putString("mtu", map["mtu"])
+                profileInfo.putString("keepalive", map["keepalive"])
 
                 profileInfo.putString("VpnType", "ikev2-eap")
 
